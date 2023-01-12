@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def landing(request):
+    """Render the Landing page."""
+    return render(request, 'bouncer/index.html')
