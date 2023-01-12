@@ -4,8 +4,8 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /requirements.txt
 
-RUN atp-get update -y && \
-    atp-get upgrade -y && \
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
     pip install --upgrade pip && \
     pip install -r /requirements.txt
 
