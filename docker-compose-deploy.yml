@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
     gcloud:
-        image: google/cloud-sdk:341.0.0-slim
+        image: google/cloud-sdk:412.0.0-slim
         volumes:
             - gcp-creds:/creds
             - .:/app
