@@ -9,3 +9,5 @@ services:
         volumes:
             - ./app:/app
             - ./static:/vol/static
+        environment:
+            - DEBUG=1
