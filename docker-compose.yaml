@@ -11,3 +11,15 @@ services:
             - ./static:/vol/static
         environment:
             - DEBUG=1
+            - DATASTORE_EMULATOR_HOST=datastore:8001
+            - DATASTORE_PROJECT_ID=local-dev
+        depends_on:
+            - datastore
+
+    datastore:
+        build:
+            context: ./docker/datastore
+        volumes:
+            - ./data:data
+        environment:
+            - DATASTORE_PROJECT_ID=local-dev
