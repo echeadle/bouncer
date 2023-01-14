@@ -21,6 +21,6 @@ services:
         build:
             context: ./docker/datastore
         volumes:
-            - ./data:data
+            - ./data:/data
         environment:
             - DATASTORE_PROJECT_ID=local-dev

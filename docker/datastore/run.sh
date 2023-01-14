@@ -11,7 +11,7 @@ fi
 gcloud config set project ${DATASTORE_PROJECT_ID}
 
 # Start emulator
-gcloud emulators datastore start \
+gcloud beta emulators datastore start \
     --consistency=1.0 \
     --host-port=0.0.0.0:8001 \
     --quiet \
