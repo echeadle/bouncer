@@ -16,4 +16,3 @@ gcloud beta emulators datastore start \
     --host-port=0.0.0.0:8001 \
     --quiet \
     --data-dir /data
-
