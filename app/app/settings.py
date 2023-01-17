@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+
 from app import secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app.datastoreNDBMiddleware',
+    'app.datastore.NDBMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -117,14 +118,14 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
         },
     },
-    "root": {
-        "handlers": ["console"],
-        "level": "DEBUG",
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
     }
 }
 
