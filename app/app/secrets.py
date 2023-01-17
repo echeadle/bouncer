@@ -1,5 +1,5 @@
 """
-Retrieve secrets from Secret Manger
+Retrieve secrets from Secret Manager.
 """
 
 import os
