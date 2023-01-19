@@ -1,13 +1,14 @@
-version: "3.9"
+version: '3.9'
 
 services:
-    gcloud:
-        image: google/cloud-sdk:412.0.0-slim
-        volumes:
-            - gcp-creds:/creds
-            - .:/app
-        working_dir: /app
-        environment:
-            - CLOUDSDK_CONFIG=/creds
+  gcloud:
+    image: google/cloud-sdk:341.0.0-slim
+    volumes:
+      - gcp-creds:/creds
+      - .:/app
+    working_dir: /app
+    environment:
+      - CLOUDSDK_CONFIG=/creds
+
 volumes:
-    gcp-creds:
+  gcp-creds:

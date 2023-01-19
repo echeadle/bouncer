@@ -18,6 +18,7 @@ from django.urls import (
     include,
 )
 
+
 urlpatterns = [
-    path('', include('bouncer.urls')),
+    path('', include('bouncer.urls'))
 ]

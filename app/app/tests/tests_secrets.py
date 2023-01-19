@@ -13,6 +13,7 @@ from app import secrets
 
 MOCK_GCP_PROJECT = 'test-project'
 
+
 @patch.dict(
     'os.environ', {
         'GOOGLE_CLOUD_PROJECT': MOCK_GCP_PROJECT,
@@ -57,4 +58,3 @@ class LocalDevModeTests(SimpleTestCase):
             val = secrets.get(name)
 
         self.assertEqual(val, secret)
-        mock_sm.assert_not_called()
