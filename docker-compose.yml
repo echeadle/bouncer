@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app
+      - ./static:/vol/static
+    environment:
+      - DEBUG=1
+      - DATASTORE_EMULATOR_HOST=datastore:8001
+      - DATASTORE_PROJECT_ID=local-dev
+      - GOOGLE_CLOUD_PROJECT=local-dev
+      - SECRET_KEY=DevSecretKey123
+    depends_on:
+      - datastore
+
+  datastore:
+    build:
+      context: ./docker/datastore
+    volumes:
+      - ./data:/data
+    environment:
+      - DATASTORE_PROJECT_ID=local-dev
