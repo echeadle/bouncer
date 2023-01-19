@@ -3,10 +3,7 @@ Test the landing page.
 """
 from google.cloud import ndb
 
-from django.test import Client
 from django.urls import reverse
-
-from app.datastore import get_client
 
 from bouncer.tests.base import DatastoreTestCase
 from bouncer.models import Redirect
@@ -17,10 +14,6 @@ URL_LANDING = reverse('bouncer:landing')
 
 class LandingPageTests(DatastoreTestCase):
     """Tests for the landing page."""
-
-    def setUp(self):
-        self.client = Client()
-        self.ds_client = get_client
 
     def test_list_redirect_links(self):
         """Test link redirect links."""

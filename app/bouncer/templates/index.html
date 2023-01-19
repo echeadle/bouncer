@@ -1,0 +1,16 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <h1>Short URL Links</h1>
+    <ul>
+      {% for redirect in redirects %}
+        <li><a href="{% url 'bouncer:redirect' slug=redirect.key.id %}">{{ redirect.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
