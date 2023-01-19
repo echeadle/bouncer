@@ -5,8 +5,12 @@ from google.cloud import ndb
 
 from django.urls import reverse
 
+from app.datastore import get_client
+
 from bouncer.tests.base import DatastoreTestCase
 from bouncer.models import Redirect
+
+
 
 
 URL_LANDING = reverse('bouncer:landing')
